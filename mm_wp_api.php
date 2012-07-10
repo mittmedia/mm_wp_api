@@ -41,7 +41,7 @@ $mm_wp_api_app = new \WpMvc\Application();
 $mm_wp_api_app->init( 'MmWpApi', WP_PLUGIN_DIR . '/mm_wp_api' );
 
 // WP: Add pages
-add_action( 'network_admin_menu', 'i_write_about_add_pages' );
+add_action( 'network_admin_menu', 'mm_wp_api_add_pages' );
 function mm_wp_api_add_pages()
 {
   add_submenu_page( 'settings.php', 'Mittmedia Wordpress API', 'Mittmedia Wordpress API', 'Super Admin', 'mm_wp_api', 'mm_wp_api_settings_page');
@@ -51,5 +51,5 @@ function mm_wp_api_settings_page()
 {
   global $mm_wp_api_app;
 
-  $mm_wp_api_app->settings_controller->index();
+  $mm_wp_api_app->mm_wp_api_controller->index();
 }
