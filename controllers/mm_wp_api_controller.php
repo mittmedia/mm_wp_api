@@ -38,6 +38,7 @@ namespace MmWpApi
             case "1":
               $this->render( $this, "single-1" );
             break;
+          }
         break;
 
         case "list":
