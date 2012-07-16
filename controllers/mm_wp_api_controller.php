@@ -34,7 +34,10 @@ namespace MmWpApi
           $post->short_post_date = strftime("%e %B", strtotime($post->post_date));
           $user = \WpMvc\User::find($post->post_author);
 
-          $this->render( $this, "single" );
+          switch ( $_GET["legacy"] ) {
+            case: "1":
+              $this->render( $this, "single-1" );
+            break;
         break;
 
         case "list":
@@ -43,24 +46,10 @@ namespace MmWpApi
         break;
 
       }
-      #echo "ergrtg";
-      //$blogs = \WpMvc\Blog::all(false);
-      //foreach ( $blogs as $blog ) {
-      //  echo $blog->path;
-      //}
-
-      //echo "<pre>";
-      //print_r( $blogs );
-      //echo "</pre>";
     }
 
     public function index()
     {
-      //global $current_site;
-      //global $site;
-
-      //$site = \WpMvc\Site::find( $current_site->id );
-
       if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
         echo "POST";
       }
