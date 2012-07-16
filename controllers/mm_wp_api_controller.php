@@ -35,7 +35,7 @@ namespace MmWpApi
           $user = \WpMvc\User::find($post->post_author);
 
           switch ( $_GET["legacy"] ) {
-            case: "1":
+            case "1":
               $this->render( $this, "single-1" );
             break;
         break;
