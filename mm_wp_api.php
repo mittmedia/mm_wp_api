@@ -50,6 +50,7 @@ function mm_wp_api_add_pages()
 function mm_wp_api_settings_page()
 {
   global $mm_wp_api_app;
+  global $current_site;
 
   $mm_wp_api_app->mm_wp_api_controller->index();
 }

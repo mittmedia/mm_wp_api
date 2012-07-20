@@ -3,9 +3,6 @@ setlocale( LC_TIME, 'sv_SE.utf8');
 
 global $blog;
 global $post;
-
-#var_dump(strtotime($post->post_date));
-
 #echo "</pre>";
 ?>
 <div xmlns:dc="http://purl.org/dc/elements/1.1/" class="blogTeaser customBlogTeaser">
