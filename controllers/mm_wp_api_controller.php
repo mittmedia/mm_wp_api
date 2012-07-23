@@ -55,13 +55,19 @@ namespace MmWpApi
           $list_data = array();
 
           foreach ( $blogs as $blog ) {
-            $posts_data = $wpdb->get_results( $wpdb->prepare( "SELECT post_date, post_author, post_title, guid FROM wp_{$blog->blog_id}_posts WHERE post_status = 'publish' AND post_date <= %s ORDER BY post_date DESC LIMIT {$post_by_blog_limit};", date( 'Y-m-d H:i:s') ) );
-            foreach ( $posts_data as $post_data ) {
-              if ($post_data->post_title) {
-                $list_data[$post_data->post_date] = $post_data;
-                $list_data[$post_data->post_date]->path = $blog->path;
-                $list_data[$post_data->post_date]->author = $post_data->post_author;
-                $list_data[$post_data->post_date]->post_time = strftime("%H:%M", strtotime($post_data->post_date));
+            $public = $blog->public;
+
+            if ( $public == 0 ) {
+              unset($blog);
+            } else {
+              $posts_data = $wpdb->get_results( $wpdb->prepare( "SELECT post_date, post_author, post_title, guid FROM wp_{$blog->blog_id}_posts WHERE post_status = 'publish' AND post_date <= %s ORDER BY post_date DESC LIMIT {$post_by_blog_limit};", date( 'Y-m-d H:i:s') ) );
+              foreach ( $posts_data as $post_data ) {
+                if ($post_data->post_title) {
+                  $list_data[$post_data->post_date] = $post_data;
+                  $list_data[$post_data->post_date]->path = $blog->path;
+                  $list_data[$post_data->post_date]->author = $post_data->post_author;
+                  $list_data[$post_data->post_date]->post_time = strftime("%H:%M", strtotime($post_data->post_date));
+                }
               }
             }
           }
@@ -83,7 +89,7 @@ namespace MmWpApi
 
     public function index()
     {
-      if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
+      if ( $_SERVER['REQUEST_METHOD'] == 'POST' && isset( $_GET['page'] ) && $_GET['page'] == 'mm_wp_api' ) {
         echo "POST";
       }
       if ( $_GET ) {
