@@ -44,7 +44,7 @@ $mm_wp_api_app->init( 'MmWpApi', WP_PLUGIN_DIR . '/mm_wp_api' );
 add_action( 'network_admin_menu', 'mm_wp_api_add_pages' );
 function mm_wp_api_add_pages()
 {
-  add_submenu_page( 'settings.php', 'Mittmedia Wordpress API', 'Mittmedia Wordpress API', 'Super Admin', 'mm_wp_api', 'mm_wp_api_settings_page');
+  add_submenu_page( 'settings.php', 'Mittmedia Wordpress API', 'Mittmedia Wordpress API', 'manage_network', 'mm_wp_api', 'mm_wp_api_settings_page');
 }
 
 function mm_wp_api_settings_page()

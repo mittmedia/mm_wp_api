@@ -10,10 +10,10 @@ global $post;
     <span class="articleDate"><?= $post->short_post_date ?></span>
   </div>
   <div class="blogHeadline">
-    <span class="blogLabel withoutLink"><?= $blog->options->blogname->option_value ?></span>
+    <span class="blogLabel withoutLink"><?= $blog->option->blogname->option_value ?></span>
 
     <span class="blogLabel withLink">
-      <a onclick="window.open(this.href); return false;" href="<?= $blog->options->siteurl->option_value ?>"><?= $blog->options->blogname->option_value ?></a>
+      <a onclick="window.open(this.href); return false;" href="<?= $blog->option->siteurl->option_value ?>"><?= $blog->option->blogname->option_value ?></a>
     </span>
 
     <span class="blogDate middle">
@@ -26,9 +26,9 @@ global $post;
   </div>
 
   <div class="blogDescription">
-    <span class="blogLabel withoutLink"><?= $blog->options->blogname->option_value ?></span>
+    <span class="blogLabel withoutLink"><?= $blog->option->blogname->option_value ?></span>
     <span class="blogLabel withLink">
-      <a onclick="window.open(this.href); return false;" href="<?= $blog->options->siteurl->option_value ?>">Daniela</a>
+      <a onclick="window.open(this.href); return false;" href="<?= $blog->option->siteurl->option_value ?>">Daniela</a>
     </span>
     <span class="blogDate middle">
       <span class="articleDate"><?= $post->short_post_date ?></span>
@@ -39,9 +39,9 @@ global $post;
     </a>
   </div>
   <div class="blogDescriptionOneForty">
-    <span class="blogLabel withoutLink"><?= $blog->options->blogname->option_value ?></span>
+    <span class="blogLabel withoutLink"><?= $blog->option->blogname->option_value ?></span>
     <span class="blogLabel withLink">
-      <a onclick="window.open(this.href); return false;" href="<?= $blog->options->siteurl->option_value ?>"><?= $blog->options->blogname->option_value ?></a>
+      <a onclick="window.open(this.href); return false;" href="<?= $blog->option->siteurl->option_value ?>"><?= $blog->option->blogname->option_value ?></a>
     </span>
     <span class="blogDate middle">
       <span class="articleDate"><?= $post->short_post_date ?></span>
@@ -54,9 +54,9 @@ global $post;
   <div class="blogDescriptionHeader">
       <div class="blogImageFromPolopoly">
         <img src="${polopoly_blog_image}"></div>
-        <span class="blogLabel withoutLink"><?= $blog->options->blogname->option_value ?></span>
+        <span class="blogLabel withoutLink"><?= $blog->option->blogname->option_value ?></span>
         <span class="blogLabel withLink">
-          <a onclick="window.open(this.href); return false;" href="<?= $blog->options->siteurl->option_value ?>"><?= $blog->options->blogname->option_value ?></a>
+          <a onclick="window.open(this.href); return false;" href="<?= $blog->option->siteurl->option_value ?>"><?= $blog->option->blogname->option_value ?></a>
         </span>
         <span class="blogDate middle">
           <span class="articleDate"><?= $post->short_post_date ?></span>
@@ -73,7 +73,7 @@ global $post;
         <div class="blogAuthorAndTitle">
           <span class="blogAuthor"><?= $user->usermeta->nickname->meta_value ?></span>
           <span class="comma">,<span class="spacer"> </span></span>
-          <span class="blogTitle"><?= $blog->options->blogname->option_value ?></span>
+          <span class="blogTitle"><?= $blog->option->blogname->option_value ?></span>
         </div>
   </div>
   <div class="blogDate last">
