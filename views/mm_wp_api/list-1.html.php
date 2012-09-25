@@ -6,7 +6,7 @@ global $current_site;
 
 ?>
 <div class="customBlog_customBlogListTeaserWrapper">
-  <?
+  <?php
   $i = 1;
   foreach ( $list_data as $list_item )
   {
@@ -36,7 +36,7 @@ global $current_site;
       </div>
     </div>
     -->
-  <?
+  <?php
     $i++;
   } ?>
 </div>
